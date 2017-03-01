@@ -1,16 +1,29 @@
-# Use Ubuntu
-FROM ubuntu
-MAINTAINER TestAutomationGuru
+FROM rhel:7.2
+MAINTAINER domenicbove
+
+# Need to install Yum Base Packages, and Java
+RUN yum repolist > /dev/null && \
+    yum-config-manager --enable rhel-7-server-optional-rpms && \
+    yum clean all && \
+    INSTALL_PKGS="unzip \
+    wget \
+    which \
+    yum-utils \
+    java-1.8.0-openjdk-devel" && \
+    yum install -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
+    rpm -V $INSTALL_PKGS && \
+    yum clean all
+
 
 # Install wger & JRE
-RUN apt-get clean && \
-	apt-get update && \
-	apt-get -qy install \
-				wget \
-				default-jre-headless \
-				telnet \
-				iputils-ping \
-				unzip
+# RUN apt-get clean && \
+# 	apt-get update && \
+# 	apt-get -qy install \
+# 				wget \
+# 				default-jre-headless \
+# 				telnet \
+# 				iputils-ping \
+# 				unzip
 
 # Install jmeter
 RUN   mkdir /jmeter \
