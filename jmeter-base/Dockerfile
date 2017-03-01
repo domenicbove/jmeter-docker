@@ -5,7 +5,8 @@ MAINTAINER domenicbove
 RUN yum repolist > /dev/null && \
     yum-config-manager --enable rhel-7-server-optional-rpms && \
     yum clean all && \
-    INSTALL_PKGS="unzip \
+    INSTALL_PKGS="tar \
+		unzip \
     wget \
     which \
     yum-utils \
