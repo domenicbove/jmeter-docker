@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: jmeter-base
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: rhel-jmeter:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: http://tfs.ups.com:8080/tfs/UpsProd/P04AGit_CIPE/P04AGit_CIPE%20Team/_git/CIPE_JMeter_Base_Image
+    type: Git
+    contextDir: jmeter-base
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: rhel:7.3
+        namespace: openshift
+    type: Docker
+  triggers:
+  - github:
+      secret: 1802aa5420b11b2c
+    type: GitHub
+  - imageChange: {}
+    type: ImageChange
+status:
+  lastVersion: 0

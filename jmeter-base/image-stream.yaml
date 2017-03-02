@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  creationTimestamp: null
+  name: rhel-jmeter
+  namespace: cipe-integration
+  generation: 1
+spec: {}
+status:
+  dockerImageRepository: ""
