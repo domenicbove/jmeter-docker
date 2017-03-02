@@ -12,8 +12,8 @@ spec:
   runPolicy: Serial
   source:
     git:
-      ref: master
-      uri: http://tfs.ups.com:8080/tfs/UpsProd/P04AGit_CIPE/P04AGit_CIPE%20Team/_git/CIPE_JMeter_Base_Image
+      ref: rhel
+      uri: https://github.com/domenicbove/jmeter-docker
     type: Git
     contextDir: jmeter-base
   strategy:
