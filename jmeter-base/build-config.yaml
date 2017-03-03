@@ -20,8 +20,8 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: rhel:7.3
-        namespace: openshift
+        name: rhel:latest
+        namespace: jmeter-job
     type: Docker
   triggers:
   - github:

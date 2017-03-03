@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jmeter-base
+spec:
+  parallelism: 1
+  completions: 1
+  template:
+    metadata:
+      name: jmeter-base
+    spec:
+      containers:
+      - name: jmeter-base
+        image: 172.30.154.153:5000/jmeter-job/rhel-jmeter:latest
+        command: ["pwd"]
+      restartPolicy: Never
