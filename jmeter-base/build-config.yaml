@@ -21,7 +21,6 @@ spec:
       from:
         kind: ImageStreamTag
         name: rhel:latest
-        namespace: jmeter-job
     type: Docker
   triggers:
   - github:

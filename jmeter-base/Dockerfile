@@ -15,17 +15,6 @@ RUN yum repolist > /dev/null && \
     rpm -V $INSTALL_PKGS && \
     yum clean all
 
-
-# Install wger & JRE
-# RUN apt-get clean && \
-# 	apt-get update && \
-# 	apt-get -qy install \
-# 				wget \
-# 				default-jre-headless \
-# 				telnet \
-# 				iputils-ping \
-# 				unzip
-
 # Install jmeter
 RUN   mkdir /jmeter \
       && cd /jmeter/ \
@@ -36,6 +25,8 @@ RUN   mkdir /jmeter \
 	  && cd /jmeter-plugins/ \
 	  && wget https://jmeter-plugins.org/downloads/file/JMeterPlugins-ExtrasLibs-1.4.0.zip \
 	  && unzip -o JMeterPlugins-ExtrasLibs-1.4.0.zip -d /jmeter/apache-jmeter-2.13/
+
+COPY CSVSample.jmx CSVSample.jmx
 
 # Set Jmeter Home
 ENV JMETER_HOME /jmeter/apache-jmeter-2.13/
