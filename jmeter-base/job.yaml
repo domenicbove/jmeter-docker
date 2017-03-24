@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: jmeter-base
-        image: 172.30.154.153:5000/jmeter-job/rhel-jmeter:latest
+        image: 172.30.154.153:5000/jmeter/rhel-jmeter:latest
         command: ["pwd"]
       restartPolicy: Never

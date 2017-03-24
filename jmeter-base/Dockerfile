@@ -27,6 +27,7 @@ RUN   mkdir /jmeter \
 	  && unzip -o JMeterPlugins-ExtrasLibs-1.4.0.zip -d /jmeter/apache-jmeter-2.13/
 
 COPY CSVSample.jmx CSVSample.jmx
+COPY runjob.sh runjob.sh
 
 # Set Jmeter Home
 ENV JMETER_HOME /jmeter/apache-jmeter-2.13/

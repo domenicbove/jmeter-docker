@@ -20,7 +20,7 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: rhel:latest
+        name: rhel7:latest
     type: Docker
   triggers:
   - github:
